@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>java-path-core</artifactId>
+		<groupId>gr.codelearn</groupId>
+		<version>2022.1.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+
+	<artifactId>java-path-core-maven</artifactId>
+
+
+	<modules>
+		<module>calculator-provider</module>
+		<module>calculator-input</module>
+	</modules>
+
+	<properties>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+	</properties>
+
+	<build>
+		<!-- Plugins and corresponding configuration used by all sub modules -->
+		<plugins>
+			<plugin>
+				<!--	Maven shade plugin is executed in package phase and onwards, preparing an uber-jar-->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.2.4</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<shadedArtifactAttached>true</shadedArtifactAttached>
+							<transformers>
+								<transformer implementation=
+													 "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>gr.codelearn.core.showcase.maven.calculator.input.CalculatorInputHandler
+										</mainClass>
+									<manifestEntries>
+										<Multi-Release>true</Multi-Release>
+									</manifestEntries>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

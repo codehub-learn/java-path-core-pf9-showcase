@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<!-- Packaging -->
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>jar</packaging>
+
+	<!-- Versioning -->
+	<artifactId>calculator-input</artifactId>
+	<version>2022.1.0</version>
+	<parent>
+		<artifactId>java-path-core-maven</artifactId>
+		<groupId>gr.codelearn</groupId>
+		<version>2022.1.0</version>
+	</parent>
+
+	<!-- Meta-data -->
+	<name>[${project.artifactId}]</name>
+	<description>Java Learning @ Development Path, Maven module, module depending on another dependency</description>
+
+	<properties>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+	</properties>
+
+	<!-- Dependencies -->
+	<dependencies>
+		<dependency>
+			<groupId>gr.codelearn</groupId>
+			<artifactId>calculator-provider</artifactId>
+			<version>2022.2.0</version>
+		</dependency>
+	</dependencies>
+
+</project>
