@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+	<Properties>
+		<Property name="LOG_PATTERN">
+			%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${hostName} - [%15.15t] %-30.30c{1.} : %m%n%ex
+		</Property>
+	</Properties>
+
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}"/>
+		</Console>
+
+		<!-- Rolling Random Access File Appender with a default buffer of 256 * 1024 bytes -->
+		<RollingRandomAccessFile name="RollingRandomAccessFileAppender"
+								 fileName="logs/java-path-core-collection.log"
+								 filePattern="logs/java-path-core-collection-%d{yyyy-MM-dd}.zip">
+			<PatternLayout>
+				<Pattern>${LOG_PATTERN}</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+			</Policies>
+			<DefaultRolloverStrategy>
+				<Delete basePath="logs">
+					<IfLastModified age="30d"/>
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingRandomAccessFile>
+	</Appenders>
+
+	<Loggers>
+		<AsyncLogger name="gr.codelearn" level="debug" additivity="false">
+			<AppenderRef ref="ConsoleAppender"/>
+			<AppenderRef ref="RollingRandomAccessFileAppender"/>
+		</AsyncLogger>
+
+		<Root level="info">
+			<AppenderRef ref="ConsoleAppender"/>
+			<AppenderRef ref="RollingRandomAccessFileAppender"/>
+		</Root>
+	</Loggers>
+</Configuration>

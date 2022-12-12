@@ -24,7 +24,8 @@
 	<modules>
 		<module>java-path-core-basic</module>
 		<module>java-path-core-maven</module>
-	</modules>
+        <module>java-path-core-collection</module>
+    </modules>
 
 	<!-- Properties/Variables -->
 	<properties>
@@ -103,6 +104,12 @@
 		<dependency>
 			<groupId>com.lmax</groupId>
 			<artifactId>disruptor</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>RELEASE</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 
