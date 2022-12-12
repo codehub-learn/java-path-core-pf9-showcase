@@ -1,10 +1,11 @@
-package gr.codelearn.core.showcase.collection;
+package gr.codelearn.core.showcase.oop;
 
-import gr.codelearn.core.showcase.collection.model.Car;
-import gr.codelearn.core.showcase.collection.model.Bike;
-import gr.codelearn.core.showcase.collection.model.Category;
-import gr.codelearn.core.showcase.collection.model.Doors;
-import gr.codelearn.core.showcase.collection.model.Vehicle;
+import gr.codelearn.core.showcase.oop.model.Bike;
+import gr.codelearn.core.showcase.oop.model.Car;
+import gr.codelearn.core.showcase.oop.model.Category;
+import gr.codelearn.core.showcase.oop.model.Doors;
+import gr.codelearn.core.showcase.oop.model.Movable;
+import gr.codelearn.core.showcase.oop.model2.Entity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,5 +29,12 @@ public class Main {
 		logger.info("{}", Doors.DOORS_FIVE.getNumberOfDoors());
 		car1.setCategory(Category.ELECTRIC);
 		logger.info("{}", Category.ELECTRIC);
+		Category category = Category.ELECTRIC;
+		Category electric = Category.valueOf("ELECTRIC");
+		logger.info("{}", electric);
+
+		Movable car2 = new Car();
+
+		Entity entity = new gr.codelearn.core.showcase.oop.model2.Bike();
 	}
 }

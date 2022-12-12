@@ -1,10 +1,6 @@
-package gr.codelearn.core.showcase.collection.model;
+package gr.codelearn.core.showcase.oop.model;
 
-import gr.codelearn.core.showcase.collection.model.Vehicle;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 @Data

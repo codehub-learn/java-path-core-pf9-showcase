@@ -1,15 +1,11 @@
-package gr.codelearn.core.showcase.collection.model;
+package gr.codelearn.core.showcase.oop.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @NoArgsConstructor
 @Data
-public class Vehicle {
+public class Vehicle implements Transport {
 	private Long id;
 	private String model;
 
@@ -18,7 +14,28 @@ public class Vehicle {
 		this.model = model;
 	}
 
-	public void move(){
+	@Override
+	public void move() {
+
+	}
+
+	@Override
+	public void stop() {
+
+	}
+
+	@Override
+	public void increaseSpeed() {
+
+	}
+
+	@Override
+	public void decreaseSpeed() {
+
+	}
+
+	@Override
+	public void teleport() {
 
 	}
 

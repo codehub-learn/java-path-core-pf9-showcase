@@ -1,10 +1,11 @@
 package gr.codelearn.core.showcase.collection.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-public class Car extends Vehicle{
-	private String brand;
-	private Doors numberOfDoors;
-	private Category category;
+@AllArgsConstructor
+public class Car {
+	private int id;
+	private String name;
 }
