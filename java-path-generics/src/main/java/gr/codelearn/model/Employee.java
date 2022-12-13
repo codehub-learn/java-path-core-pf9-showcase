@@ -9,6 +9,16 @@ public class Employee  {
 	private BigDecimal salary;
 	private Department department;
 
+	public Employee() {
+	}
+
+	public Employee(Employee source) {
+		name = source.name;
+		dateOfBirth = source.dateOfBirth;
+		salary = source.salary;
+		department = source.department;
+	}
+
 	public Department getDepartment() {
 		return department;
 	}
@@ -39,5 +49,11 @@ public class Employee  {
 
 	public void setSalary(final BigDecimal salary) {
 		this.salary = salary;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee{" + "name='" + name + '\'' + ", dateOfBirth=" + dateOfBirth + ", salary=" + salary +
+				", department=" + department + '}';
 	}
 }
