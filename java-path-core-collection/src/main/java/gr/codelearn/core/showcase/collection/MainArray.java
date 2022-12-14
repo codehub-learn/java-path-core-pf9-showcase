@@ -59,6 +59,9 @@ public class MainArray {
 		cars[3] = new Car(4, "Fiat");
 		cars[4] = new Car(5, "Toyota");
 
+		String[] cars2 = {"1", "2", "3", "4"};
+		logger.info("{}", Arrays.toString(cars2));
+
 		// natural ordering
 		//Arrays.sort(cars);
 		Arrays.sort(cars, new Comparator<Car>() {
@@ -87,5 +90,14 @@ public class MainArray {
 		for (final String randomStrings : stringsToBeSorted) {
 			logger.info("{}", randomStrings);
 		}
+
+		test("testStr");
+		test("1");
+		test("2", "3");
+		test("2", "3", "3", "3", "3", "3", "3", "3", "3");
+	}
+
+	public static void test(String testStr, String... strings){
+		//String str = strings[0];
 	}
 }
