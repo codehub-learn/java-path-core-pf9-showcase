@@ -4,6 +4,7 @@ import gr.codelearn.core.showcase.collection.model.Car;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -51,6 +52,15 @@ public class MainList {
 		}
 
 		exercise();
+
+		newList.sort(new Comparator<String>() {
+			@Override
+			public int compare(final String o1, final String o2) {
+				return o1.length()-o2.length();
+			}
+		});
+
+		newList.sort(null);
 	}
 
 	static void exercise(){
