@@ -27,6 +27,7 @@
         <module>java-path-core-collection</module>
         <module>java-path-generics</module>
         <module>java-path-core-stream</module>
+        <module>java-path-core-QnA_1</module>
     </modules>
 
 	<!-- Properties/Variables -->
